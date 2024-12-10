@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Parse the response
       const data = await response.json();
-     const price = Number(data.predicted_price).toFixed(2)
+     const price = Number(data.predicted_price/100).toFixed(2);
       
       // Display the predicted price
-      predictedPrice.textContent = `₹${price}`;
+      predictedPrice.textContent = `₹${price}/kg`;
       priceResult.classList.remove("hidden");
     } catch (error) {
       // Handle errors
